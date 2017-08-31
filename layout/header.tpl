@@ -3,14 +3,15 @@
 {extends file="../../Evo/layout/header.tpl"}
 
 {* Beispiel: Überschreiben des Page-Titles auf allen Seiten *}
-{block name="head-title"}CHILD-TEMPLATE!{/block}
+{block name="head-title"}Stoffnschnitt.de{/block}
 
-{* Beispiel: Anhängen eines Meta-Tags og:image im Head-Bereich auf Artikel-Seiten *}
-{block name="head-resources" append}
-    {if !empty($Artikel->Bilder)}
-        <meta property="og:image" content="{$ShopURL}/{$Artikel->Bilder[0]->cPfadNormal}" />
-    {/if}
+{block name="head-resources"}
+        {* css *}
+        <link type="text/css" href="../css/jquery-eu-cookie-law-popup.css" rel="stylesheet">
 {/block}
-{strip}
-	<div class="eupopup eupopup-top eupopup-style-compact"></div>
-{/strip}
+
+<script src="../js/jquery-2.1.3.min.js"></script>
+<script src="../js/jquery-eu-cookie-law-popup.js"></script>
+
+
+<div class="eupopup eupopup-top eupopup-style-compact"></div>
